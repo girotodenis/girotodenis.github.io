@@ -3,9 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Acompanhe sua carteira de investimentos direto do navegador, usando sua planilha do Google Sheets como base de dados. Funciona offline, é instalável e gratuito." />
+  <meta name="description" content="Minhas Ações é um aplicativo web (PWA) gratuito para acompanhar sua carteira de investimentos da B3 usando sua própria planilha do Google Sheets. Saiba quais dados do Google o app acessa e por quê." />
   <meta name="google-site-verification" content="Xvi4z-VtqEzi1cqZX8edum_vtV38ZFTEVG4LF88SoVQ" />
-    <title>Minhas Ações — Sua carteira de investimentos, seus dados</title>
+  <link rel="canonical" href="https://girotodenis.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Minhas Ações" />
+  <meta property="og:title" content="Minhas Ações — aplicativo de controle de carteira de investimentos" />
+  <meta property="og:description" content="Aplicativo web gratuito que usa sua planilha do Google Sheets como banco de dados para acompanhar sua carteira de investimentos." />
+  <meta property="og:url" content="https://girotodenis.github.io/" />
+  <title>Minhas Ações — aplicativo de controle de carteira de investimentos</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Minhas Ações",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web (navegador), Android, iOS, Windows, macOS, Linux",
+    "url": "https://girotodenis.github.io/renda/",
+    "description": "Aplicativo web (PWA) gratuito para acompanhar a carteira de investimentos da B3, usando a planilha do Google Sheets do próprio usuário como banco de dados.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "author": { "@type": "Person", "name": "Denis Giroto" }
+  }
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XPK9ZT0QJ"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -249,10 +268,132 @@
       border-top: 1px solid rgba(255, 255, 255, .06);
     }
 
+    /* ---------- Navegação / links secundários ---------- */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a.plain {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .92rem;
+      white-space: nowrap;
+    }
+
+    .nav-links a.plain:hover,
+    .nav-links a.plain:focus-visible { color: var(--text); text-decoration: underline; }
+
+    /* ---------- Seções de conteúdo ---------- */
+    .section-narrow {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 10px 28px 70px;
+    }
+
+    .section-narrow h2 {
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .section-narrow h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 26px 0 8px;
+    }
+
+    .section-narrow p { color: var(--muted); margin-bottom: 14px; }
+    .section-narrow p:last-child { margin-bottom: 0; }
+    .section-narrow a { color: var(--accent); }
+    .section-narrow ul, .section-narrow ol { color: var(--muted); margin: 0 0 14px 22px; }
+    .section-narrow li { margin-bottom: 8px; }
+    .section-narrow strong { color: var(--text); }
+
+    /* ---------- Tabela de dados do Google ---------- */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      margin: 18px 0 10px;
+    }
+
+    table.data {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .92rem;
+      min-width: 640px;
+    }
+
+    table.data th,
+    table.data td {
+      text-align: left;
+      padding: 14px 16px;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    table.data thead th {
+      background: rgba(34, 197, 94, .1);
+      color: var(--text);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    table.data td { color: var(--muted); }
+    table.data td:first-child { color: var(--text); font-weight: 600; }
+    table.data tbody tr:last-child td { border-bottom: none; }
+    table.data code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: .82rem;
+      color: var(--gold);
+      word-break: break-all;
+    }
+
+    /* ---------- Avisos ---------- */
+    .note {
+      border-left: 4px solid var(--accent);
+      background: rgba(34, 197, 94, .07);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      font-size: .92rem;
+      color: var(--muted);
+      margin: 20px 0;
+    }
+
+    .note strong { color: var(--text); }
+
+    /* ---------- Rodapé ---------- */
+    footer .foot-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+
+    footer .foot-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    footer .foot-links a:hover { color: var(--accent); text-decoration: underline; }
+    footer p { margin: 6px 0; }
+    footer .disclaimer { max-width: 780px; margin: 14px auto 0; font-size: .78rem; line-height: 1.55; }
+
     @media (max-width: 600px) {
       .topbar { padding: 12px 16px; }
       .cta-btn { padding: 10px 18px; font-size: .9rem; }
       .privacy-box { flex-direction: column; text-align: center; }
+      .nav-links { gap: 12px; }
+      .nav-links a.plain { font-size: .82rem; }
+      .nav-links a.plain.hide-sm { display: none; }
     }
   </style>
 </head>
@@ -261,28 +402,64 @@
   <!-- Barra superior com botão de destaque -->
   <nav class="topbar">
     <div class="brand">
-      <div class="logo">📈</div>
+      <div class="logo" aria-hidden="true">📈</div>
       <span>Minhas Ações</span>
     </div>
-    <a class="cta-btn" href="http://girotodenis.github.io/renda/">
-      🚀 Abrir o app
-    </a>
+    <div class="nav-links">
+      <a class="plain hide-sm" href="#sobre">Sobre o app</a>
+      <a class="plain hide-sm" href="#dados-google">Dados do Google</a>
+      <a class="plain" href="https://girotodenis.github.io/privacy.html">Privacidade</a>
+      <a class="cta-btn" href="https://girotodenis.github.io/renda/" rel="noopener">
+        🚀 Abrir o app
+      </a>
+    </div>
   </nav>
 
   <!-- Hero -->
   <header class="hero">
-    <div class="badge">100% gratuito • Sem servidor • Seus dados ficam com você</div>
-    <h1>Controle sua carteira de investimentos <span>sem abrir mão da sua privacidade</span></h1>
+    <div class="badge">Aplicativo web gratuito • Código aberto no navegador • Seus dados ficam na sua conta Google</div>
+    <h1>Minhas Ações: controle sua carteira de investimentos <span>sem abrir mão da sua privacidade</span></h1>
     <p>
-      O Minhas Ações usa a <strong>sua planilha do Google Sheets</strong> como banco de dados.
-      Acompanhe rentabilidade, dividendos e evolução patrimonial direto do navegador —
-      instalável como app e funciona até <strong>offline</strong>.
+      <strong>Minhas Ações</strong> é um aplicativo web (PWA) para investidores pessoa física que
+      querem acompanhar a própria carteira de ações, FIIs e outros ativos da B3. Ele usa a
+      <strong>sua planilha do Google Sheets</strong> como banco de dados: você entra com sua Conta
+      Google, autoriza o acesso à planilha que <em>você</em> escolher e o app calcula preço médio,
+      rentabilidade, dividendos e evolução patrimonial direto do navegador —
+      instalável como app e com funcionamento <strong>offline</strong>.
     </p>
-    <a class="cta-btn" href="http://girotodenis.github.io/renda/">
+    <a class="cta-btn" href="https://girotodenis.github.io/renda/" rel="noopener">
       📊 Começar agora — é grátis
     </a>
-    <p class="trust">Nenhum cadastro extra. Basta sua conta Google.</p>
+    <p class="trust">Sem cadastro extra. Basta sua Conta Google. Nenhum dado é enviado a servidores do desenvolvedor.</p>
   </header>
+
+  <!-- Sobre o aplicativo -->
+  <section class="section-narrow" id="sobre">
+    <h2>Sobre o aplicativo</h2>
+    <p>
+      O <strong>Minhas Ações</strong> é um aplicativo da web de uso pessoal, desenvolvido de forma
+      independente por <strong>Denis Giroto</strong>, que ajuda você a registrar e acompanhar
+      operações de compra e venda, proventos (dividendos e JCP), eventos corporativos (splits,
+      grupamentos e bonificações) e metas de alocação da sua carteira.
+    </p>
+    <p>
+      Diferente de outros aplicativos de investimentos, ele <strong>não possui servidor próprio e
+      não mantém banco de dados em nuvem do desenvolvedor</strong>. Toda a informação financeira
+      fica gravada na planilha do Google Sheets que pertence a você, na sua própria Conta Google.
+      O app funciona como uma camada de cálculo e visualização sobre essa planilha.
+    </p>
+    <p>
+      O acesso à página do aplicativo é feito em
+      <a href="https://girotodenis.github.io/renda/" rel="noopener">girotodenis.github.io/renda/</a>.
+    </p>
+
+    <h3>Como funciona</h3>
+    <ol>
+      <li><strong>Entre com sua Conta Google</strong> e autorize o app a acessar apenas as planilhas que você indicar.</li>
+      <li><strong>Escolha ou crie sua planilha</strong> — é nela que operações, proventos e configurações ficam salvos.</li>
+      <li><strong>Acompanhe seus números</strong> no dashboard: preço médio, lucro/prejuízo, alocação por ativo e categoria, dividendos recebidos e evolução patrimonial.</li>
+    </ol>
+  </section>
 
   <!-- Funcionalidades -->
   <section class="features">
@@ -340,16 +517,80 @@
     </div>
   </section>
 
+  <!-- Dados do Google: finalidade e transparência (requisito da verificação OAuth) -->
+  <section class="section-narrow" id="dados-google">
+    <h2>Quais dados do Google o app acessa e para quê</h2>
+    <p>
+      Para funcionar, o Minhas Ações solicita a sua Conta Google somente os dados necessários
+      para identificar você e ler/gravar a planilha que você escolher. A finalidade de cada
+      permissão está descrita abaixo de forma explícita.
+    </p>
+
+    <!-- IMPORTANTE: mantenha esta lista exatamente igual aos escopos configurados na tela de consentimento OAuth -->
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>Dado / permissão solicitada</th>
+            <th>Por que o app precisa disso</th>
+            <th>Onde o dado fica armazenado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nome, e-mail e foto do perfil<br /><code>openid</code> <code>email</code> <code>profile</code></td>
+            <td>Identificar sua conta, exibir quem está conectado e vincular suas preferências locais ao seu login. Usado apenas para autenticação — não enviamos e-mails nem mensagens.</td>
+            <td>No seu navegador (armazenamento local). Não é transmitido para servidores do desenvolvedor.</td>
+          </tr>
+          <tr>
+            <td>Planilhas do Google Sheets<br /><code>spreadsheets</code></td>
+            <td>Ler e gravar as operações, proventos, eventos corporativos e configurações da carteira na planilha que <strong>você</strong> selecionar. É o único "banco de dados" do aplicativo.</td>
+            <td>Na sua própria planilha, dentro da sua Conta Google.</td>
+          </tr>
+          <tr>
+            <td>Arquivos do Google Drive criados pelo app<br /><code>drive.file</code></td>
+            <td>Criar a planilha inicial, localizar e abrir apenas os arquivos que o próprio app criou ou que você selecionou explicitamente, e gerar cópias de segurança/exportações.</td>
+            <td>Na sua própria Conta Google (Google Drive).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>O que o app não faz com seus dados</h3>
+    <ul>
+      <li>Não acessa seu Gmail, Contatos, Calendário, fotos ou arquivos do Drive não selecionados por você.</li>
+      <li>Não vende, aluga, compartilha nem transfere dados do usuário a terceiros.</li>
+      <li>Não usa seus dados para publicidade, criação de perfis comerciais ou treinamento de modelos.</li>
+      <li>Não permite que pessoas leiam seus dados — o acesso técnico é inexistente, pois não há servidor próprio do app.</li>
+    </ul>
+
+    <p class="note">
+      <strong>Uso Limitado:</strong> o uso e a transferência, por parte do Minhas Ações, de informações
+      recebidas das APIs do Google seguem a
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener" target="_blank">Política de Dados do Usuário dos Serviços de API do Google</a>,
+      incluindo os requisitos de Uso Limitado (Limited Use).
+    </p>
+
+    <p>
+      Você pode revogar o acesso do app a qualquer momento em
+      <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">myaccount.google.com/permissions</a>
+      ou excluir a planilha diretamente na sua Conta Google. Mais detalhes na
+      <a href="https://girotodenis.github.io/privacy.html">Política de Privacidade</a>.
+    </p>
+  </section>
+
   <!-- Privacidade -->
   <section class="privacy">
     <div class="privacy-box">
-      <div class="lock">🔒</div>
+      <div class="lock" aria-hidden="true">🔒</div>
       <div>
         <h3>Privacidade de verdade</h3>
         <p>
           O app não tem servidor próprio: ele é apenas uma "tela" sobre a <strong>sua</strong> planilha.
-          Tudo é salvo na sua conta Google, e a única cópia local fica no seu navegador
-          para o funcionamento offline. Ninguém mais vê seus dados.
+          Tudo é salvo na sua Conta Google, e a única cópia local fica no seu navegador
+          para o funcionamento offline. Leia a
+          <a href="https://girotodenis.github.io/privacy.html" style="color: var(--accent); font-weight: 700;">Política de Privacidade</a>
+          para saber exatamente quais dados são tratados, com qual finalidade e como excluí-los.
         </p>
       </div>
     </div>
@@ -359,13 +600,27 @@
   <section class="final-cta">
     <h2>Pronto para assumir o controle da sua carteira?</h2>
     <p>Abra o app agora e conecte sua planilha em menos de um minuto.</p>
-    <a class="cta-btn" href="http://girotodenis.github.io/renda/">
+    <a class="cta-btn" href="https://girotodenis.github.io/renda/" rel="noopener">
       🚀 Acessar o Minhas Ações
     </a>
   </section>
 
   <footer>
-    Minhas Ações — seus investimentos, seus dados. &copy; 2026
+    <div class="foot-links">
+      <a href="https://girotodenis.github.io/privacy.html">Política de Privacidade</a>
+      <a href="https://girotodenis.github.io/terms.html">Termos de Serviço</a>
+      <a href="https://girotodenis.github.io/renda/">Abrir o app</a>
+      <a href="mailto:girotodenis@gmail.com">Contato</a>
+    </div>
+    <p><strong>Minhas Ações</strong> — seus investimentos, seus dados. &copy; 2026</p>
+    <p class="disclaimer">
+      Minhas Ações é um projeto independente, desenvolvido por Denis Giroto, e
+      <strong>não é afiliado, patrocinado, endossado ou de qualquer forma associado ao Google LLC</strong>
+      nem à B3 S.A. Google, Google Sheets, Google Drive e Android são marcas registradas do Google LLC.
+      O aplicativo tem finalidade exclusivamente informativa e de organização pessoal:
+      <strong>não constitui recomendação, oferta ou consultoria de investimentos</strong>.
+      Página atualizada em 21 de outubro de 2026.
+    </p>
   </footer>
 
 </body>

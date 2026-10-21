@@ -2,13 +2,124 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Política de Privacidade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidade do aplicativo Minhas Ações: quais dados do Google são acessados, com qual finalidade, onde ficam armazenados e como revogar o acesso.">
+    <link rel="canonical" href="https://girotodenis.github.io/privacy.html">
+    <title>Política de Privacidade — Minhas Ações</title>
+    <style>
+        :root { --bg:#0b1220; --card:#16223c; --accent:#22c55e; --text:#e8eefb; --muted:#9fb0cf; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:"Segoe UI",system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+        header { border-bottom:1px solid rgba(255,255,255,.07); padding:18px 24px; }
+        header a { color:var(--text); text-decoration:none; font-weight:800; }
+        main { max-width:820px; margin:0 auto; padding:48px 24px 80px; }
+        h1 { font-size:clamp(1.7rem,4vw,2.4rem); margin-bottom:8px; }
+        h2 { font-size:1.2rem; margin:34px 0 10px; color:var(--accent); }
+        p, li { color:var(--muted); margin-bottom:12px; }
+        strong { color:var(--text); }
+        ul, ol { margin:0 0 12px 22px; }
+        a { color:var(--accent); }
+        .updated { font-size:.88rem; color:var(--muted); margin-bottom:28px; }
+        .box { background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px 22px; margin:18px 0; }
+        table { width:100%; border-collapse:collapse; font-size:.9rem; margin:14px 0; }
+        th, td { text-align:left; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.07); vertical-align:top; }
+        th { color:var(--text); }
+        td { color:var(--muted); }
+        code { color:#fbbf24; font-size:.82rem; word-break:break-all; }
+        footer { text-align:center; padding:26px; font-size:.85rem; color:var(--muted); border-top:1px solid rgba(255,255,255,.07); }
+    </style>
 </head>
 <body>
-    <h1>Política de Privacidade</h1>
-    <p><strong>1. Coleta de Dados:</strong> Nosso aplicativo utiliza a autenticação do Google apenas para identificar o usuário. Não armazenamos suas credenciais, senhas ou dados pessoais em servidores próprios.</p>
-    <p><strong>2. Uso do Google Drive:</strong> Todos os arquivos e dados gerados pelo uso do aplicativo são armazenados exclusivamente no seu próprio Google Drive. Nós não temos acesso aos seus arquivos pessoais nem salvamos cópias desses dados em servidores externos.</p>
-    <p><strong>3. Compartilhamento de Dados:</strong> Não vendemos, compartilhamos ou transferimos qualquer informação pessoal ou dado do Google Drive a terceiros.</p>
-    <p><strong>4. Contato:</strong> Para dúvidas sobre esta política, entre em contato pelo e-mail: girotodenis@gmail.com.</p>
+    <header><a href="https://girotodenis.github.io/">📈 Minhas Ações</a></header>
+    <main>
+        <h1>Política de Privacidade</h1>
+        <p class="updated">Aplicativo: <strong>Minhas Ações</strong> · Última atualização: 21 de outubro de 2026</p>
+
+        <p>Esta Política de Privacidade descreve como o aplicativo <strong>Minhas Ações</strong>
+        ("app"), disponível em <a href="https://girotodenis.github.io/renda/">https://girotodenis.github.io/renda/</a>,
+        trata as informações dos usuários, incluindo os dados obtidos por meio das APIs do Google.
+        O app é um projeto independente desenvolvido por <strong>Denis Giroto</strong>
+        (contato: <a href="mailto:girotodenis@gmail.com">girotodenis@gmail.com</a>) e não possui
+        vínculo, patrocínio ou endosso do Google LLC.</p>
+
+        <h2>1. Dados do Google acessados e sua finalidade</h2>
+        <p>O app solicita apenas as permissões necessárias ao seu funcionamento:</p>
+        <table>
+            <thead>
+                <tr><th>Permissão</th><th>Finalidade</th><th>Armazenamento</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nome, e-mail e foto do perfil<br><code>openid</code>, <code>email</code>, <code>profile</code></td>
+                    <td>Autenticar o usuário e exibir a conta conectada.</td>
+                    <td>Navegador do usuário (armazenamento local).</td>
+                </tr>
+                <tr>
+                    <td>Planilhas do Google Sheets<br><code>spreadsheets</code></td>
+                    <td>Ler e gravar operações, proventos, eventos corporativos e configurações na planilha escolhida pelo usuário.</td>
+                    <td>Conta Google do próprio usuário.</td>
+                </tr>
+                <tr>
+                    <td>Google Drive (arquivos criados pelo app)<br><code>drive.file</code></td>
+                    <td>Criar a planilha inicial, localizar/abrir arquivos criados pelo app ou selecionados pelo usuário e gerar cópias de segurança.</td>
+                    <td>Conta Google do próprio usuário.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>O app <strong>não solicita</strong> acesso a Gmail, Contatos, Calendário ou a arquivos do
+        Google Drive não selecionados pelo usuário.</p>
+
+        <h2>2. Ausência de servidor próprio</h2>
+        <p>O Minhas Ações não mantém servidores, banco de dados ou infraestrutura de backend.
+        Toda a informação financeira permanece na planilha do Google Sheets do usuário e, para
+        funcionamento offline, em uma cópia local no navegador (cache/localStorage). O desenvolvedor
+        não possui acesso a esses dados.</p>
+
+        <h2>3. Compartilhamento com terceiros</h2>
+        <p>Não vendemos, alugamos, compartilhamos nem transferimos dados do usuário a terceiros.
+        Não há uso de dados do Google para publicidade, criação de perfis comerciais ou
+        treinamento de modelos de machine learning.</p>
+
+        <div class="box">
+            <p><strong>Uso Limitado (Limited Use):</strong> o uso e a transferência, por parte do
+            Minhas Ações, de informações recebidas das APIs do Google seguem a
+            <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Política de Dados do Usuário dos Serviços de API do Google</a>,
+            incluindo os requisitos de Uso Limitado.</p>
+        </div>
+
+        <h2>4. Retenção e exclusão dos dados</h2>
+        <ul>
+            <li>Os dados permanecem na Conta Google do usuário enquanto ele mantiver a planilha.</li>
+            <li>O usuário pode excluir a planilha a qualquer momento diretamente no Google Drive, o que remove definitivamente os dados do app.</li>
+            <li>Os dados locais (preferências e cache) podem ser apagados limpando os dados do site no navegador.</li>
+            <li>Não há prazo de retenção próprio, pois o desenvolvedor não armazena dados.</li>
+        </ul>
+
+        <h2>5. Revogação de acesso</h2>
+        <p>O acesso do app à Conta Google pode ser revogado em
+        <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.
+        Após a revogação, o app deixa de conseguir ler ou gravar na planilha.</p>
+
+        <h2>6. Segurança</h2>
+        <p>A comunicação entre o navegador e as APIs do Google ocorre por HTTPS. Como não há
+        servidor intermediário, as credenciais de acesso (tokens OAuth) nunca são transmitidas
+        ao desenvolvedor e ficam apenas no navegador do usuário.</p>
+
+        <h2>7. Menores de idade</h2>
+        <p>O app não é destinado a menores de 18 anos e não coleta intencionalmente dados desse público.</p>
+
+        <h2>8. Alterações nesta política</h2>
+        <p>Esta política pode ser atualizada para refletir mudanças no aplicativo ou exigências
+        legais. A data da última atualização será sempre indicada no topo desta página.</p>
+
+        <h2>9. Contato</h2>
+        <p>Dúvidas sobre privacidade e tratamento de dados:
+        <a href="mailto:girotodenis@gmail.com">girotodenis@gmail.com</a>.</p>
+    </main>
+    <footer>
+        <a href="https://girotodenis.github.io/">Página inicial</a> ·
+        <a href="https://girotodenis.github.io/terms.html">Termos de Serviço</a> ·
+        &copy; 2026 Minhas Ações
+    </footer>
 </body>
 </html>
